@@ -1,0 +1,62 @@
+<section class="p-4 shadow w-75 mx-auto rounded my-3">
+    <h1>Order details</h1>
+    <form [formGroup]="registerForm" (ngSubmit)="handleForm()">
+        <div class="form-item">
+            <label for="details">details</label>
+            <input type="text" formControlName="details" class="form-control" id="details" />
+            <div *ngIf="
+            (registerForm.get('details')?.touched ||
+              registerForm.get('details')?.value.length > 0) &&
+            registerForm.get('details')?.errors
+          " class="alert alert-danger text-center p-1 w-50 small mx-auto">
+                <p class="mb-0" *ngIf="registerForm.get('details')?.getError('minlength')">
+                    details minimum lingh 3
+                </p>
+                <p class="mb-0" *ngIf="registerForm.get('details')?.getError('maxlength')">
+                    details maximum lingh 20
+                </p>
+                <p class="mb-0" *ngIf="registerForm.get('details')?.getError('required')">
+                    details is required
+                </p>
+            </div>
+        </div>
+
+        <div class="form-item">
+            <label for="phone">phone</label>
+            <input type="tel" formControlName="phone" class="form-control" id="phone" />
+            <div *ngIf="
+            registerForm.get('phone')?.touched &&
+            registerForm.get('phone')?.errors
+          " class="alert alert-danger text-center p-1 w-50 small mx-auto">
+                <p class="mb-0" *ngIf="registerForm.get('phone')?.getError('required')">
+                    phone is required
+                </p>
+                <p class="mb-0" *ngIf="registerForm.get('phone')?.getError('pattern')">
+                    accept only egypt phone numbers
+                </p>
+            </div>
+        </div>
+
+        <div class="form-item">
+            <label for="city">city</label>
+            <input type="text" formControlName="city" class="form-control" id="city" />
+            <div *ngIf="
+            (registerForm.get('city')?.touched ||
+              registerForm.get('city')?.value.length > 0) &&
+            registerForm.get('city')?.errors
+          " class="alert alert-danger text-center p-1 w-50 small mx-auto">
+                <p class="mb-0" *ngIf="registerForm.get('city')?.getError('minlength')">
+                    city minimum lingh 3
+                </p>
+                <p class="mb-0" *ngIf="registerForm.get('city')?.getError('maxlength')">
+                    city maximum lingh 20
+                </p>
+                <p class="mb-0" *ngIf="registerForm.get('city')?.getError('required')">
+                    city is required
+                </p>
+            </div>
+        </div>
+        <button class="main-btn mt-3" [disabled]="registerForm.invalid">
+            Register 
+        </button>
+    </form>

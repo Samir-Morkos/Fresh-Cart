@@ -1,1 +1,108 @@
 /* You can add global styles to this file, and also import other style files */
+
+@import url('https://fonts.googleapis.com/css2?family=Encode+Sans+Expanded:wght@300&display=swap');
+@import 'ngx-owl-carousel-o/lib/styles/scss/owl.carousel';
+@import 'ngx-owl-carousel-o/lib/styles/scss/owl.theme.default';
+
+
+$maincolor:#0aad0a;
+$light-color:#f0f3f2;
+$shadow: rgba(145,158,171,.2) 0px 2px 4px -1px,
+rgba(145,158,171,.14) 0px 4px 5px 0px,
+rgba(145,158,171,.12) 0px 1px 10px 0px;
+$font-family: "Encode Sans Expanded", sans-serif;
+$rating-color:#ffc908;
+$main-transition:0.8;
+
+
+body{
+    font-family:$font-family;
+}
+.font-sm{
+    font-size: 11px;
+}
+.bg-main{
+    background-color: $maincolor;
+}
+.text-main{
+    color: $maincolor;
+}
+.rating-color{
+    color: $rating-color;
+}
+.bg-main-light{
+    background-color: $light-color;
+}
+.text-main-light{
+    color: $light-color;
+}
+.main-btn{
+    background-color: $maincolor;
+    color: #fff;
+    border-radius: 5px;
+    border: unset;
+    cursor: pointer;
+    padding: 4px 8px;
+
+    &:disabled{
+        background-color: #0aad0a84;
+        color: #f0f3f2a1;
+        cursor: not-allowed;
+    }
+}
+
+.product{
+    border: solid 1px $maincolor;
+    padding: 4px;
+    box-shadow: $shadow;
+    overflow: hidden;
+    position: relative;
+
+
+    &:hover{
+        .main-btn{
+            transform: translateY(0);
+            opacity: 1;
+        }
+        .heart{
+            right: 7px;
+        }
+    }
+    .main-btn{
+        transform: translateY(150%);
+        opacity: 0;
+        transition: .8s;
+    }
+    .heart{
+        font-size: 35px;
+        position: absolute;
+        top: 7px;
+        right: -50px;
+        z-index: 99;
+        color: rgb(251, 91, 91);
+        cursor: pointer;
+        transition: all .8s;
+    }
+
+}
+.active-link{
+    color: #fff !important;
+    background-color: $maincolor !important;
+    border-radius: 5px !important;
+}
+a{
+    color: #2e2e2e;
+}
+
+
+::-webkit-scrollbar{
+    width: 10px;
+}
+::-webkit-scrollbar-track{
+    background-color: $light-color;
+}
+::-webkit-scrollbar-thumb{
+    background-color: $maincolor;
+    border-radius: 8px;
+}
+

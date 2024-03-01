@@ -27,9 +27,12 @@ export class NavbarBlankComponent implements OnInit {
     if( scrollY > 500 ){
       this._Renderer2.addClass(this.navElement.nativeElement,'px-5')
       this._Renderer2.addClass(this.navElement.nativeElement,'shadow')
+      this._Renderer2.addClass(this.navElement.nativeElement,'opacity-75')
+      
     }else{
       this._Renderer2.removeClass(this.navElement.nativeElement,'px-5')
       this._Renderer2.removeClass(this.navElement.nativeElement,'shadow')
+      this._Renderer2.removeClass(this.navElement.nativeElement,'opacity-75')
     }
 
   }

@@ -13,7 +13,7 @@
             <div>
                 <h3 class="h6">{{item.product.title}} </h3>
                 <p class="text-main"> Price : {{item.price |currency:" EGP "}} </p>
-                <button #btnRemove (click)="removItem(item.product._id,btnRemove)" class="text-main btn m-0 p-0">
+                <button #btnRemove (click)="removItem(item.product._id,btnRemove)" class=" btn btn-outline-danger">
                     <i class="fas fa-trash-can "></i> Remove </button>                
             </div>
             <div>
@@ -24,7 +24,7 @@
         </div>
     </div>
 
-    <button [routerLink]="['/payment',cartDetails._id]" class="main-btn">Online Payment</button>
+    <button [routerLink]="['/payment',cartDetails._id]" class="main-btn w-100 py-3 fw-bolder rounded-5 my-3">Check Out</button>
 </section>
 
 <ng-template #Msg>
